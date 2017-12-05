@@ -11,9 +11,8 @@ $i = 0;
 $answer = 0;
 $count = array();
 foreach ($content as $row) {
-    $row = str_replace("	", " ", $row);
     $row = str_replace("\n","", $row);
-    $count[$i] = explode(" ", $row);
+    $count[$i] = explode("	", $row);
     $i++;
 }
 
