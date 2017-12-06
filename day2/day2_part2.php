@@ -20,23 +20,23 @@ foreach ($content as $row) {
 $answerPart2 = 0;
 
 foreach ($numberList as $row) {
-    $dodaloop = false;
+    $foundAnswer = false;
     $count = count($row) - 1;
     $i = 0;
     $j = 0;
     rsort($row);
 
-    while ($dodaloop === false) {
+    while ($foundAnswer === false) {
         if (($row[$i] % $row[$j +1]) == 0) {
             if ($row[$i] / $row[$j + 1] != 1) {
                 $answer = $row[$i] / $row [$j + 1];
                 echo $row[$i] . " / " . $row[$j + 1] . " =" . $answer . " <br />";
-                $dodaloop = true;
+                $foundAnswer = true;
                 $answerPart2 += $answer;
             }
         }
         $j++;
-        if ($j === 15) {
+        if ($j === $count) {
             $i++;
             $j = 0;
         }
